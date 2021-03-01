@@ -20,9 +20,15 @@ import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.example.androiddevchallenge.Route.DOG_DETAIL
+import com.example.androiddevchallenge.Route.DOG_LIST
 import com.example.androiddevchallenge.ui.theme.MyTheme
 
 class MainActivity : AppCompatActivity() {
@@ -39,8 +45,14 @@ class MainActivity : AppCompatActivity() {
 // Start building your app here!
 @Composable
 fun MyApp() {
+    val dogLists = remember { mutableStateOf(getDogsList()) }
+    val navController = rememberNavController()
+
     Surface(color = MaterialTheme.colors.background) {
-        Text(text = "Ready... Set... GO!")
+        NavHost(navController = navController, startDestination = DOG_LIST) {
+            composable(DOG_LIST) { DogLists(dogs = dogLists.value, navController = navController) }
+            composable(DOG_DETAIL) { DogDetail(navController = navController) }
+        }
     }
 }
 
@@ -58,4 +70,9 @@ fun DarkPreview() {
     MyTheme(darkTheme = true) {
         MyApp()
     }
+}
+
+object Route {
+    const val DOG_LIST = "dogList"
+    const val DOG_DETAIL = "dogDetail"
 }
