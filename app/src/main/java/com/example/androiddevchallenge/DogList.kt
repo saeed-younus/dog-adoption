@@ -1,3 +1,18 @@
+/*
+ * Copyright 2021 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package com.example.androiddevchallenge
 
 import androidx.compose.animation.AnimatedVisibility
@@ -5,10 +20,26 @@ import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.IntrinsicSize
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.*
+import androidx.compose.material.Button
+import androidx.compose.material.Card
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Scaffold
+import androidx.compose.material.Surface
+import androidx.compose.material.Text
+import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -28,11 +59,15 @@ fun DogLists(
     dogs: List<DogUiModel>,
     navController: NavController,
 ) {
-    Scaffold(topBar = {
-        TopAppBar(title = {
-            Text(text = "Dogs")
-        })
-    }) {
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                title = {
+                    Text(text = "Dogs")
+                }
+            )
+        }
+    ) {
         Box(Modifier.fillMaxSize()) {
             LazyColumn(Modifier.fillMaxWidth()) {
                 val groupedBy = dogs.groupBy { it.breed }
@@ -90,7 +125,6 @@ fun DogItem(dog: DogUiModel, itemViewDetailClickListener: () -> Unit) {
                     }
                     DogBreed.Husky -> {
                         painterResource(id = R.drawable.husky)
-
                     }
                     DogBreed.BullDog -> {
                         painterResource(id = R.drawable.bull_dog)
@@ -111,13 +145,13 @@ fun DogItem(dog: DogUiModel, itemViewDetailClickListener: () -> Unit) {
                         .height(150.dp)
                 )
                 Spacer(modifier = Modifier.height(16.dp))
-                Row {
+                Row(Modifier.fillMaxWidth().padding(start = 16.dp, end = 16.dp), horizontalArrangement = Arrangement.SpaceBetween) {
                     val painterLike = if (liked.value) {
                         painterResource(id = R.drawable.ic_filled_thumb_up)
                     } else {
                         painterResource(id = R.drawable.ic_outline_thumb_up)
                     }
-                    Spacer(modifier = Modifier.width(16.dp))
+                    Text(text = dog.name, style = MaterialTheme.typography.body1)
                     Image(
                         painter = painterLike,
                         contentDescription = dog.breed.value,
@@ -130,8 +164,6 @@ fun DogItem(dog: DogUiModel, itemViewDetailClickListener: () -> Unit) {
                             },
                         colorFilter = ColorFilter.tint(MaterialTheme.colors.onSurface),
                     )
-                    Spacer(modifier = Modifier.width(16.dp))
-                    Text(text = dog.name, style = MaterialTheme.typography.body1)
                 }
                 Spacer(modifier = Modifier.height(16.dp))
 

@@ -1,3 +1,18 @@
+/*
+ * Copyright 2021 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package com.example.androiddevchallenge
 
 data class DogUiModel(
@@ -30,12 +45,12 @@ fun getDogsList(): List<DogUiModel> {
                 name = names.random(),
                 breed = breeds.random(),
                 detail = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque maximus, augue sed egestas vulputate, lectus nisl dictum erat, a faucibus arcu eros in nunc. Proin eleifend gravida luctus. Fusce molestie ipsum quis orci facilisis suscipit. Sed pretium dictum accumsan. Donec lacinia a diam vitae ultricies. Nullam ac dapibus augue. Pellentesque blandit mi vitae turpis egestas, vitae tincidunt mauris porttitor. Ut ut molestie augue. Ut feugiat enim at elit tempor tempor. Pellentesque dignissim ornare felis, eu convallis mauris tincidunt eget.\n" +
-                        "\n" +
-                        "Sed eu nisi et enim luctus elementum at et nunc. Vestibulum bibendum auctor dui eu pulvinar. Donec ullamcorper placerat mauris et dignissim. Duis laoreet tortor in risus rutrum sodales. Integer lorem est, tempor quis quam sit amet, pretium mattis lacus. Nam ac sagittis nulla. Cras metus elit, aliquet eu pretium eu, mattis ac eros. Nulla eu venenatis ex. Aliquam pharetra neque ac urna dapibus commodo. Vivamus egestas mollis magna, blandit interdum risus ullamcorper ut. Nullam iaculis, quam eu euismod consequat, lectus turpis dictum ligula, quis laoreet nibh arcu et mauris. Nunc non vehicula dolor. Morbi turpis turpis, faucibus a lacinia eget, porta nec lorem. Fusce at finibus dui. Sed malesuada nisi sed posuere euismod. Curabitur auctor eleifend magna a scelerisque.\n" +
-                        "\n" +
-                        "Nunc at luctus erat, a porta ligula. Vestibulum ornare tristique ornare. Pellentesque varius finibus neque. Praesent eu diam non nisl congue condimentum quis sed urna. Phasellus eu augue eros. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin mattis est non turpis malesuada bibendum. Pellentesque vel feugiat ligula, non feugiat augue. Donec eleifend id massa ut facilisis. Proin bibendum quis nisl id tempus. Cras erat libero, consequat vel pellentesque eu, efficitur eu magna. Maecenas molestie tempor vestibulum. Pellentesque nec iaculis arcu.\n" +
-                        "\n" +
-                        "Mauris erat tortor, vestibulum ut tellus et, tempor sagittis nibh. Suspendisse elementum fermentum tortor at venenatis. In eget nisl enim. Suspendisse lectus justo, sollicitudin eu tellus ac, ultrices faucibus velit. Integer aliquet sapien quis sollicitudin euismod. Aliquam varius at velit vel mattis. Nam congue, sem at lacinia consectetur, ipsum lacus rhoncus justo, id rutrum est mi sit amet massa. Nam rutrum bibendum ullamcorper. Vestibulum gravida tellus eget magna pulvinar, sit amet pellentesque lorem tincidunt. Maecenas facilisis commodo dui, ac sodales diam gravida sit amet. Duis turpis dolor, elementum sollicitudin consequat et, placerat et arcu. Quisque tempus non mauris id rutrum. Praesent mollis scelerisque eros a sollicitudin. Mauris volutpat ultricies ligula at semper. Cras in ligula orci.",
+                    "\n" +
+                    "Sed eu nisi et enim luctus elementum at et nunc. Vestibulum bibendum auctor dui eu pulvinar. Donec ullamcorper placerat mauris et dignissim. Duis laoreet tortor in risus rutrum sodales. Integer lorem est, tempor quis quam sit amet, pretium mattis lacus. Nam ac sagittis nulla. Cras metus elit, aliquet eu pretium eu, mattis ac eros. Nulla eu venenatis ex. Aliquam pharetra neque ac urna dapibus commodo. Vivamus egestas mollis magna, blandit interdum risus ullamcorper ut. Nullam iaculis, quam eu euismod consequat, lectus turpis dictum ligula, quis laoreet nibh arcu et mauris. Nunc non vehicula dolor. Morbi turpis turpis, faucibus a lacinia eget, porta nec lorem. Fusce at finibus dui. Sed malesuada nisi sed posuere euismod. Curabitur auctor eleifend magna a scelerisque.\n" +
+                    "\n" +
+                    "Nunc at luctus erat, a porta ligula. Vestibulum ornare tristique ornare. Pellentesque varius finibus neque. Praesent eu diam non nisl congue condimentum quis sed urna. Phasellus eu augue eros. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin mattis est non turpis malesuada bibendum. Pellentesque vel feugiat ligula, non feugiat augue. Donec eleifend id massa ut facilisis. Proin bibendum quis nisl id tempus. Cras erat libero, consequat vel pellentesque eu, efficitur eu magna. Maecenas molestie tempor vestibulum. Pellentesque nec iaculis arcu.\n" +
+                    "\n" +
+                    "Mauris erat tortor, vestibulum ut tellus et, tempor sagittis nibh. Suspendisse elementum fermentum tortor at venenatis. In eget nisl enim. Suspendisse lectus justo, sollicitudin eu tellus ac, ultrices faucibus velit. Integer aliquet sapien quis sollicitudin euismod. Aliquam varius at velit vel mattis. Nam congue, sem at lacinia consectetur, ipsum lacus rhoncus justo, id rutrum est mi sit amet massa. Nam rutrum bibendum ullamcorper. Vestibulum gravida tellus eget magna pulvinar, sit amet pellentesque lorem tincidunt. Maecenas facilisis commodo dui, ac sodales diam gravida sit amet. Duis turpis dolor, elementum sollicitudin consequat et, placerat et arcu. Quisque tempus non mauris id rutrum. Praesent mollis scelerisque eros a sollicitudin. Mauris volutpat ultricies ligula at semper. Cras in ligula orci.",
             )
         )
     }
